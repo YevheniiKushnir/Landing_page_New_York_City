@@ -1,0 +1,2 @@
+document.querySelectorAll(".cookie button").forEach(e=>{e.addEventListener("click",()=>{document.querySelector(".cookie").style.display="none"})}),document.querySelector(".join-us__form").addEventListener("submit",e=>{e.preventDefault()}),document.addEventListener("DOMContentLoaded",e=>{document.querySelector("iframe").src="https://www.youtube.com/embed/auYZVPTBxLo"}),document.querySelectorAll(".accordion__top").forEach(e=>{e.addEventListener("click",()=>{e.parentElement.classList.toggle("accordion--active")})});
+//# sourceMappingURL=index.b432c101.js.map

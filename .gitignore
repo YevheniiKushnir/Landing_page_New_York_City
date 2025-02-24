@@ -1,0 +1,10 @@
+# .gitignore
+
+# node modules
+/node_modules
+
+# Parcel cache
+/.parcel-cache
+
+# Parcel's output folder
+/dist
