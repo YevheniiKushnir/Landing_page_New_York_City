@@ -1,0 +1,118 @@
+@use "../utils" as *;
+
+.reasons {
+  background-color: $mainBackgroundGrey;
+  padding-top: 80px;
+  padding-bottom: 96px;
+
+  @include onDesktop {
+    padding-block: 160px;
+  }
+
+  &__header {
+    $lheight: 35.7px;
+    display: flex;
+    flex-direction: column;
+    gap: $lheight;
+    color: $mainColorDark;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 17.85px;
+    line-height: $lheight;
+    text-align: center;
+
+    @include onTablet {
+      $lheight: 60px;
+      font-size: 30px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    padding-top: 48px;
+    gap: 20px;
+
+    @include onTablet {
+      gap: 60px;
+    }
+
+    @include onDesktop {
+      gap: 160px;
+      padding-top: 80px;
+    }
+  }
+
+  &__line {
+    display: grid;
+    grid-auto-flow: row;
+    gap: 16px;
+
+    @include onDesktop {
+      grid-template-rows: auto;
+      grid-template-columns: repeat(2, 1fr);
+      padding-inline: 12px;
+      gap: 20px;
+    }
+
+    img {
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 30px;
+    background-image: url("../imgs/reasons/01.png");
+    background-size: 100% 44%;
+    background-position: top right;
+    background-repeat: no-repeat;
+    padding-top: 104px;
+
+    @include onTablet {
+      background-size: 90% 53%;
+    }
+
+    @include onLaptop {
+      background-size: 80% 63%;
+    }
+
+    @include onDesktop {
+      padding-top: 220px;
+      background-size: 100% 63%;
+    }
+
+    h2 {
+      font-weight: 900;
+      font-size: 30.56px;
+      line-height: 31.78px;
+      text-transform: uppercase;
+
+      @include onLaptop {
+        font-size: 38px;
+        line-height: 40px;
+      }
+
+      @include onLargeDesktop {
+        font-size: 48.05px;
+        line-height: 50px;
+      }
+    }
+
+    @for $id from 1 through 3 {
+      &--#{$id} {
+        background-image: url("../imgs/reasons/0#{$id}.png");
+      }
+    }
+
+    &--2 {
+      @include onDesktop {
+        order: 2;
+      }
+    }
+  }
+}

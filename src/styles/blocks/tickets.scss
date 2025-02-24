@@ -1,0 +1,55 @@
+@use "../utils" as *;
+
+.tickets {
+  background-color: $mainBackgroundYellow;
+  padding-top: 80px;
+  padding-bottom: 128px;
+
+  @include onTablet {
+    padding-top: 160px;
+    padding-bottom: 184px;
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+
+    @include onDesktop {
+      gap: 24px;
+    }
+  }
+
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 62px;
+
+    @include onLaptop {
+      padding-bottom: 80px;
+    }
+
+    & > img {
+      width: 100%;
+      object-fit: contain;
+      max-width: 788px;
+      flex-grow: 1;
+      margin: 0 auto;
+
+      @include onDesktop {
+        width: 50%;
+        margin: 0;
+      }
+    }
+  }
+
+  &__logo {
+    display: none;
+    flex-grow: 1;
+    align-self: flex-end;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+}

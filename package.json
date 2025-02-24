@@ -1,0 +1,14 @@
+{
+  "name": "practice1",
+  "version": "1.0.0",
+  "source": "./src/index.html",
+  "scripts": {
+    "start": "parcel serve ./src/index.html --open --no-cache --no-source-maps",
+    "build": "parcel build --public-url=/Landing_page_New_York_City/",
+    "deploy": "gh-pages -d dist"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.13.3",
+    "parcel": "^2.13.3"
+  }
+}

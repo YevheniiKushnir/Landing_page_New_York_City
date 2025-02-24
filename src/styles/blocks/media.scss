@@ -1,0 +1,106 @@
+@use "../utils" as *;
+
+.media {
+  display: flex;
+  background-color: $mainBackgroundDark;
+  padding-block: 80px;
+
+  @include onLaptop {
+    padding-block: 160px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    color: $mainColorWhite;
+
+    iframe {
+      width: 100%;
+      aspect-ratio: 2 / 1;
+      margin-bottom: 48px;
+
+      @include onDesktop {
+        margin-bottom: 80px;
+      }
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+
+    @include onLaptop {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 20px;
+    }
+
+    @include onDesktop {
+      gap: 200px;
+    }
+  }
+
+  &__text-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 48px;
+    }
+
+    @include onLaptop {
+      margin-bottom: 0;
+    }
+
+    h3 {
+      font-weight: 900;
+      font-size: 15.9px;
+      line-height: 31.78px;
+      text-transform: uppercase;
+      margin-bottom: 54px;
+
+      @include onTablet {
+        font-size: 25px;
+        line-height: 50px;
+      }
+    }
+  }
+
+  &__info {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    gap: 38px;
+    background: #262626;
+    border-radius: 20px;
+    padding: 50px;
+    padding-top: 55px;
+
+    @include onTablet {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    @include onLaptop {
+      flex-direction: column;
+      min-width: 370px;
+    }
+
+    @include onDesktop {
+      align-items: flex-start;
+    }
+
+    address {
+      font-style: normal;
+      font-family: inherit;
+    }
+
+    button {
+      max-height: 54px;
+    }
+  }
+}

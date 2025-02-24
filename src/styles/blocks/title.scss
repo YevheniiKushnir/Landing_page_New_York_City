@@ -1,0 +1,28 @@
+@use "../utils" as *;
+
+.title {
+  font-weight: 900;
+  font-size: 35px;
+  line-height: 35.7px;
+  color: $mainColorDark;
+  text-transform: uppercase;
+
+  &--white {
+    color: $mainColorWhite;
+  }
+
+  @include onTablet {
+    font-size: 42px;
+    line-height: 45px;
+  }
+
+  @include onLaptop {
+    font-size: 50px;
+    line-height: 52px;
+  }
+
+  @include onDesktop {
+    font-size: 58.83px;
+    line-height: 60px;
+  }
+}

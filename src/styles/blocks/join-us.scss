@@ -1,0 +1,33 @@
+@use "../utils" as *;
+
+.join-us {
+  background-color: $mainBackgroundGrey;
+  padding-top: 234px;
+  padding-bottom: 80px;
+
+  @include onDesktop {
+    padding-top: 328px;
+    padding-bottom: 160px;
+  }
+
+  h2 {
+    font-weight: 900;
+    font-size: 30.56px;
+    line-height: 31.78px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+
+    @include onLaptop {
+      font-size: 38px;
+      line-height: 40px;
+    }
+
+    @include onLargeDesktop {
+      font-size: 48.05px;
+      line-height: 50px;
+    }
+  }
+  p {
+    margin-bottom: 50px;
+  }
+}

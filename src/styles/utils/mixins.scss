@@ -1,0 +1,29 @@
+@mixin transition(
+  $property: all,
+  $time: 0.3s,
+  $timing-function: linear,
+  $delay: 0s
+) {
+  transition: $property $time $timing-function $delay;
+}
+
+@mixin onTablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+@mixin onLaptop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+@mixin onDesktop {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+@mixin onLargeDesktop {
+  @media (min-width: 1920px) {
+    @content;
+  }
+}

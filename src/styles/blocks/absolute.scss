@@ -1,0 +1,27 @@
+@use "../utils" as *;
+
+.absolute {
+  position: absolute;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 16px;
+  padding: 48px;
+  width: 100%;
+  max-width: 90%;
+
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 50%);
+
+  @include onTablet {
+    padding: 24px;
+    max-width: 80%;
+  }
+
+  @include onDesktop {
+    max-width: 1280px;
+    padding: 80px 48px;
+  }
+}

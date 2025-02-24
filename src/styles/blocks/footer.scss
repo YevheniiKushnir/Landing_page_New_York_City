@@ -1,0 +1,60 @@
+@use "../utils" as *;
+
+.footer {
+  background-color: $mainBackgroundDark;
+  padding-top: 96px;
+  padding-bottom: 60px;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+
+    @include onLaptop {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    img {
+      width: 100%;
+      height: 96px;
+      max-width: 408px;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: $mainColorWhite;
+    gap: 8px;
+    padding-block: 12px;
+
+    @include onDesktop {
+      flex-direction: row;
+      justify-content: flex-end;
+    }
+
+    ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+      max-width: max-content;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      a {
+        color: inherit;
+        cursor: pointer;
+        text-decoration: underline;
+      }
+    }
+  }
+}

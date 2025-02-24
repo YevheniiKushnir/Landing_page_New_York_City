@@ -1,0 +1,66 @@
+@use "../utils" as *;
+
+.accordion-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.accordion {
+  background-color: rgba($mainColorWhite, 0.4);
+
+  width: 100%;
+  height: fit-content;
+  transition: all 0.3s linear;
+  padding: 50px;
+  border-radius: 20px;
+  color: $mainColorDark;
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-weight: 700;
+    font-size: 18.3px;
+    line-height: 23.04px;
+
+    @include onTablet {
+      font-size: 27.22px;
+      line-height: 34.56px;
+    }
+
+    img {
+      width: 40px;
+      height: 40px;
+      transform: rotate(180deg);
+      cursor: pointer;
+
+      @include transition;
+    }
+  }
+
+  &__bottom {
+    padding-top: 0;
+    overflow: hidden;
+
+    font-size: 18.688px;
+    font-weight: 500;
+    line-height: 31.2px;
+    max-height: 0px;
+
+    @include transition;
+  }
+
+  &--active {
+    background-color: $mainColorWhite;
+
+    img {
+      transform: rotate(0deg);
+    }
+
+    .accordion__bottom {
+      padding-top: 23px;
+      max-height: 600px;
+    }
+  }
+}

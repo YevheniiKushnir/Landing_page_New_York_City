@@ -1,0 +1,223 @@
+@use "../utils" as *;
+
+.header {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  background-image: url("../imgs/header/header_background--mobile.png");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+
+  @include onTablet {
+    background-image: url("../imgs/header/header_background.png");
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding-top: 106px;
+    padding-bottom: 240px;
+
+    @include onTablet {
+      padding-bottom: 232px;
+      justify-content: center;
+    }
+    @include onLaptop {
+      padding-top: 150px;
+    }
+    @include onDesktop {
+      padding-top: 230px;
+    }
+  }
+
+  &__info {
+    display: none;
+    justify-content: flex-end;
+    background-color: $mainBackgroundDark;
+    gap: 40px;
+    height: 54px;
+
+    @include onTablet {
+      display: flex;
+    }
+
+    a {
+      font-weight: 600;
+      font-size: 13.83px;
+      line-height: 22.5px;
+      letter-spacing: 1.3px;
+      color: $mainColorWhite;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      position: relative;
+      cursor: pointer;
+    }
+
+    a::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      background-color: transparent;
+      height: 5px;
+      @include transition;
+    }
+
+    a:hover::before {
+      background-color: $mainColorWhite;
+    }
+
+    a:active {
+      color: black;
+    }
+
+    a:last-child {
+      background-color: $mainColorOrange;
+      padding: 20px 40px;
+    }
+  }
+
+  &__content {
+    display: grid;
+
+    grid-template-areas:
+      "logo"
+      "title"
+      "description"
+      "button";
+
+    @include onTablet {
+      grid-template-areas:
+        "title title"
+        "description description"
+        "button logo";
+      grid-template-columns: 1fr $logoMedium;
+    }
+
+    @include onDesktop {
+      grid-template-areas:
+        "title title"
+        "description logo"
+        "button button";
+      padding-left: 12px;
+      grid-template-columns: 1fr $logoBig;
+    }
+
+    position: relative;
+  }
+
+  &__logo {
+    grid-area: logo;
+    margin-bottom: 44px;
+  }
+
+  &__title {
+    font-weight: 900;
+    font-size: 34.1px;
+    line-height: 35.2px;
+    margin-bottom: 48px;
+    text-transform: uppercase;
+
+    @include onTablet {
+      font-size: 52px;
+      line-height: 58px;
+    }
+    @include onLaptop {
+      font-size: 77.19px;
+      line-height: 80px;
+    }
+
+    grid-area: title;
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    grid-area: description;
+    align-self: center;
+    position: relative;
+    margin-bottom: 44px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+    @include onLaptop {
+      margin-bottom: 58px;
+    }
+
+    p {
+      @include onLaptop {
+        padding-right: 84px;
+      }
+    }
+  }
+
+  &__button {
+    grid-area: button;
+    align-self: center;
+  }
+
+  &__absolute {
+    background-image: url("../imgs/header/header_decorative.png");
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 350px;
+
+    @include onTablet {
+      height: 240px;
+    }
+
+    @include onLaptop {
+      height: 260px;
+    }
+
+    @include onDesktop {
+      height: 196px;
+      flex-direction: row;
+    }
+
+    h3 {
+      font-weight: 900;
+      line-height: 31.78px;
+      text-align: center;
+      color: $mainColorWhite;
+      text-transform: uppercase;
+      font-size: 30.31px;
+
+      @include onTablet {
+        font-size: 40.31px;
+        line-height: 43.6px;
+      }
+
+      @include onLaptop {
+        font-size: 46.88px;
+        line-height: 50px;
+      }
+
+      @include onDesktop {
+        text-align: left;
+      }
+    }
+  }
+
+  &__cookie {
+    position: fixed;
+    top: 0;
+    bottom: auto;
+    right: 0;
+    left: 0;
+
+    @include onTablet {
+      top: auto;
+      bottom: 0;
+    }
+  }
+}

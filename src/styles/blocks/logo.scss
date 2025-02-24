@@ -1,0 +1,24 @@
+@use "../utils" as *;
+
+.logo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  position: relative;
+  max-width: $logoSmall;
+  @include onTablet {
+    max-width: $logoMedium;
+  }
+  @include onLaptop {
+    max-width: $logoBig;
+  }
+
+  img {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
